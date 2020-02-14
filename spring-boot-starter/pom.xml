@@ -1,6 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <!-- 
+    This starter cannot be a child of the camunda-parent due to the Spring dependencies defined there in
+    the dependencyManagement section. The starter needs to work with the Spring dependency versions defined
+    in the spring-boot-dependencies artifact which would be overriden by the versions defined in the camunda-parent.
+  -->
   <parent>
     <groupId>org.camunda.bpm</groupId>
     <artifactId>camunda-root</artifactId>
