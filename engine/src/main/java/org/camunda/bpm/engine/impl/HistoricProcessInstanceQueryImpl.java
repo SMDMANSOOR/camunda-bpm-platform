@@ -404,6 +404,10 @@ public class HistoricProcessInstanceQueryImpl extends AbstractVariableQueryImpl<
     return queries;
   }
 
+  public int getTotalVariableConditions() {
+    return queries.stream().mapToInt(q -> q.queryVariableValues.size()).sum();
+  }
+
   public void addOrQuery(HistoricProcessInstanceQueryImpl orQuery) {
     orQuery.isOrQueryActive = true;
     this.queries.add(orQuery);
